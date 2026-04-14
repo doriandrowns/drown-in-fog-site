@@ -210,6 +210,7 @@ function ArchiveCard({ entry }: { entry: Entry }) {
 
 export default function App() {
   const [warpEnabled, setWarpEnabled] = useState(true)
+  const [invert, setInvert] = useState(false)
   const { smoothX, smoothY, rawX, rawY, lagX, lagY } = useCursorField()
   const [contactName, setContactName] = useState('')
   const [contactEmail, setContactEmail] = useState('')
@@ -228,7 +229,7 @@ export default function App() {
   }
 
   return (
-    <div className="site-shell">
+    <div className={`site-shell ${invert ? 'invert-mode' : ''}`}>
       <WarpedMesh cx={rawX} cy={rawY} lagX={lagX} lagY={lagY} enabled={warpEnabled} />
 
       <motion.div
@@ -267,6 +268,9 @@ export default function App() {
             </a>
             <button type="button" onClick={() => setWarpEnabled((v) => !v)}>
               {warpEnabled ? 'warp off' : 'warp on'}
+            </button>
+            <button type="button" onClick={() => setInvert((v) => !v)}>
+              {invert ? 'invert off' : 'invert on'}
             </button>
           </div>
         </div>
