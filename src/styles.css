@@ -38,6 +38,18 @@ textarea {
   color: rgba(255, 255, 255, 0.92);
   text-transform: lowercase;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.06);
+  transition: filter 240ms ease;
+}
+
+/* invert mode */
+.invert-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.invert-mode iframe,
+.invert-mode img,
+.invert-mode video {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 .mesh-wrap {
