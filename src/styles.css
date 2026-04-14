@@ -263,27 +263,39 @@ textarea {
   position: relative;
   margin-top: 1.5rem;
   transform-style: preserve-3d;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .hero-word {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
-  font-size: clamp(5rem, 17vw, 8.25rem);
-  line-height: 0.86;
-  letter-spacing: 0.03em;
+  font-size: clamp(4.75rem, 14vw, 8.1rem);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   color: rgba(255,255,255,0.95);
-  text-shadow: 0 0 8px rgba(255,255,255,0.16), 0 0 24px rgba(255,255,255,0.08), 1px 0 0 rgba(255,255,255,0.08), -1px 0 0 rgba(255,255,255,0.05);
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.16),
+    0 0 24px rgba(255,255,255,0.08),
+    1px 0 0 rgba(255,255,255,0.08),
+    -1px 0 0 rgba(255,255,255,0.05);
   filter: contrast(1.08);
 }
 
 .hero-word::before,
 .hero-word::after {
-  content: attr(data-text);
+  content: none;
 }
 
 .hero-word-second {
-  margin-top: -0.5rem;
+  margin-top: -0.22rem;
 }
 
 .hero-description {
@@ -515,7 +527,7 @@ textarea::placeholder {
   }
 
   .hero-word-second {
-    margin-top: -0.75rem;
+    margin-top: -0.32rem;
   }
 
   .cards-grid {
@@ -559,5 +571,14 @@ textarea::placeholder {
 
   .merch-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-word {
+    font-size: clamp(3.75rem, 18vw, 6rem);
+    letter-spacing: 0.015em;
+  }
+
+  .hero-word-second {
+    margin-top: -0.12rem;
   }
 }
